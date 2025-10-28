@@ -3,11 +3,8 @@
   position: relative;
   width: 100%;
   max-width: 1455px !important;
-  min-height: 60vh;
-  height: auto;
   background-color: #f3f3db;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 .ellipse-background {
@@ -202,7 +199,7 @@
   position: absolute;
   width: 26vw;
   max-width: 100%;
-  height: auto;
+  height: 100%;
   min-width: 32px;
   border-radius: 50%;
   object-fit: cover;
@@ -219,7 +216,7 @@
   min-width: 32px;
   border-radius: 50%;
   object-fit: cover;
-  top: -13%;
+  top: 0%;
   left: 77%;
   box-shadow: 0 8px 24px #0002;
   z-index: 4;
@@ -360,13 +357,11 @@
 .hero-img-main {
   position: absolute;
   width: 26vw;
-  max-width: 100%;
   height: auto;
-  min-width: 32px;
   border-radius: 50%;
   object-fit: cover;
-  left: 75px;
-  top: 75px;
+  left: 15%;
+  top: 28%;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
 }
 
@@ -378,7 +373,7 @@
   min-width: 32px;
   border-radius: 50%;
   object-fit: cover;
-  top: -14%;
+  top: -5%;
   left: 55%;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
@@ -1482,7 +1477,7 @@
   flex: 0 0 350px;
   width: 350px;
   max-width: 350px;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 18px;
   box-shadow: 0 6px 28px #0001;
@@ -1960,22 +1955,6 @@
     top: -13%;
     left: 47%;
   }
-  .about-imgs {
-    display: flex;
-    flex-direction: column; /* vertical layout */
-    gap: 2vw;
-    align-items: center;
-    justify-content: space-between; /* spread evenly */
-    overflow: hidden;
-  }
-  .about-img-left{
-    width: 100% !important;
-  }
-  .about-img-square, .about-img-landscape,.about-img-tall {
-    min-width: 100% !important;
-    height: 100%; /* each image will try to fill parent height */
-    object-fit: cover;
-  } 
   .footer {
     gap: 7vw;
     padding: 28px 7vw !important;
@@ -2280,7 +2259,7 @@ body {
   position: relative;
   width: 100%;
   max-width: 340px;
-  height: auto;
+  height: 820px;
   aspect-ratio: 1.1 / 1; /* fallback for squareness */
   margin-left: auto;
   margin-right: 0;
@@ -2290,12 +2269,20 @@ body {
   justify-content: center;
 }
 .hero-img-main, .hero-img-middle, .hero-img-small {
-  width: 26vw;
-  max-width: 100%;
-  height: auto;
-  min-width: 32px;
   border-radius: 50%;
   object-fit: cover;
+}
+.hero-img-small{
+  height: 80px;
+  width: 80px;
+}
+.hero-img-middle{
+  height: 200px;
+  width: 200px;
+}
+.hero-img-main{
+  height: 530px;
+  width: 530px;
 }
 
 /* .waitlist-image,
@@ -2460,7 +2447,7 @@ body {
 
 /* Ensure .frame-2 columns never overlap */
 .frame-2 {
-  align-items: flex-start;
+  /* align-items: flex-start; */
 }
 .frame-2 .about-imgs,
 .frame-2 .div {
