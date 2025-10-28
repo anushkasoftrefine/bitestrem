@@ -20,6 +20,15 @@
           <a href="#" class="nav-link">Resources</a>
         </nav>
         <button class="login-btn">Login</button>
+        <!-- Hamburger Menu for Mobile -->
+        <button class="hamburger" id="hamburger-menu" aria-label="Open Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="mobile-nav-dropdown" id="mobile-nav-dropdown">
+          <a href="#" class="mobile-link">Feature</a>
+          <a href="#" class="mobile-link">Pricing</a>
+          <a href="#" class="mobile-link">Resources</a>
+        </div>
       </div>
       
       <!-- Hero Content -->
@@ -276,4 +285,39 @@
       </div>
     </div>
   </body>
+<script>
+  const hamburger = document.getElementById('hamburger-menu');
+  const mobileNav = document.getElementById('mobile-nav-dropdown');
+  
+  // Close mobile nav helper
+  function closeMobileNav() {
+    mobileNav.style.display = 'none';
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+  hamburger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const isOpen = mobileNav.style.display === 'flex';
+    if (isOpen) {
+      closeMobileNav();
+    } else {
+      mobileNav.style.display = 'flex';
+      hamburger.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    if (mobileNav.style.display === 'flex' &&
+      !mobileNav.contains(e.target) &&
+      e.target !== hamburger) {
+      closeMobileNav();
+    }
+  });
+
+  // Close menu with escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeMobileNav();
+  });
+</script>
 </html>

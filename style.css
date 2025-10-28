@@ -3,7 +3,8 @@
   position: relative;
   width: 100%;
   max-width: 1440px;
-  height: 841px;
+  min-height: 60vh;
+  height: auto;
   background-color: #f3f3db;
   margin: 0 auto;
   overflow: hidden;
@@ -37,7 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 28px 80px 25px 70px;
+  padding: 28px 22px 25px 22px;
   width: 100%;
   max-width: 1460px;
   margin: 0 auto;
@@ -186,8 +187,10 @@
 
 .hero-images-container {
   position: relative;
-  width: 480px;
-  height: 470px;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  aspect-ratio: 1.1 / 1; /* fallback for squareness */
   margin-left: auto;
   margin-right: 0;
   z-index: 13;
@@ -197,8 +200,10 @@
 }
 .hero-img-main {
   position: absolute;
-  width: 325px;
-  height: 325px;
+  width: 26vw;
+  max-width: 100%;
+  height: auto;
+  min-width: 32px;
   border-radius: 50%;
   object-fit: cover;
   left: 78px;
@@ -208,8 +213,10 @@
 }
 .hero-img-middle {
   position: absolute;
-  width: 112px;
-  height: 112px;
+  width: 26vw;
+  max-width: 100%;
+  height: auto;
+  min-width: 32px;
   border-radius: 50%;
   object-fit: cover;
   top: -13%;
@@ -352,8 +359,10 @@
 
 .hero-img-main {
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 26vw;
+  max-width: 100%;
+  height: auto;
+  min-width: 32px;
   border-radius: 50%;
   object-fit: cover;
   left: 75px;
@@ -363,8 +372,10 @@
 
 .hero-img-small {
   position: absolute;
-  width: 65px;
-  height: 65px;
+  width: 26vw;
+  max-width: 100%;
+  height: auto;
+  min-width: 32px;
   border-radius: 50%;
   object-fit: cover;
   top: -14%;
@@ -524,7 +535,7 @@
 .frame-2 .div {
   display: flex;
   flex-direction: column;
-  width: 592px;
+  /* width: 592px; */
   align-items: flex-start;
   gap: 25px;
   position: relative;
@@ -537,7 +548,7 @@
   align-items: flex-start;
   gap: 15px;
   position: relative;
-  align-self: stretch;
+  /* align-self: stretch; */
   width: 100%;
   flex: 0 0 auto;
 }
@@ -630,7 +641,7 @@
 .frame-3 .div {
   display: flex;
   flex-direction: column;
-  width: 592px;
+  /* width: 592px; */
   align-items: flex-start;
   gap: 25px;
   position: relative;
@@ -1457,8 +1468,9 @@
 }
 
 .waitlist-image {
-  width: 350px;
-  height: 350px;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
   object-fit: cover;
   border-radius: 18px;
   box-shadow: 0 6px 28px #0001;
@@ -1552,7 +1564,8 @@
 .footer {
   width: 100%;
   max-width: 1440px;
-  min-height: 301px;
+  min-height: 182px;
+  height: auto;
   display: flex;
   background-color: #83efb7;
   margin: 0 auto;
@@ -1694,20 +1707,23 @@
   gap: 1rem;
 }
 .about-img-square {
-  width: 170px;
-  height: 170px;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
   border-radius: 20px;
   object-fit: cover;
 }
 .about-img-landscape {
-  width: 170px;
-  height: 86px;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
   border-radius: 20px;
   object-fit: cover;
 }
 .about-img-tall {
-  width: 170px;
-  height: 260px;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
   border-radius: 20px;
   object-fit: cover;
 }
@@ -1806,7 +1822,7 @@
     flex-direction: column;
     gap: 40px;
     padding: 30px 0;
-    align-items: stretch;
+    /* align-items: stretch; */
     max-width: 98vw;
   }
   .about-imgs {
@@ -2039,4 +2055,295 @@
 
 body {
   overflow-x: hidden;
+}
+
+/* Hamburger Menu & Mobile Nav Dropdown */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+}
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  margin: 4px 0;
+  border-radius: 3px;
+  background: #222;
+  transition: all 0.23s cubic-bezier(.6,.23,.46,1.04);
+}
+.mobile-nav-dropdown {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 10px;
+  background: #fff;
+  border-radius: 13px;
+  box-shadow: 0 6px 18px #0001;
+  min-width: 150px;
+  padding: 12px 0;
+  z-index: 1999;
+  animation: slideDownFade .24s;
+  gap: 8px;
+}
+.mobile-nav-dropdown .mobile-link {
+  font-family: 'Karla-Bold', Helvetica;
+  color: #222;
+  font-size: 20px;
+  padding: 10px 24px;
+  text-align: right;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #e3e3e3;
+  transition: background 0.2s;
+}
+.mobile-nav-dropdown .mobile-link:last-child {
+  border-bottom: none;
+}
+.mobile-nav-dropdown .mobile-link:hover {
+  background: #f9f9f6;
+}
+@keyframes slideDownFade {
+  0% { opacity: 0; transform: translateY(-18px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 765px) {
+  .hero-header {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    padding: 12px 7vw !important;
+    flex-wrap: nowrap !important;
+  }
+  .nav-links {
+    display: none !important;
+  }
+  .hamburger {
+    display: flex !important;
+    margin-left: 8px;
+    order: 3;
+  }
+  .login-btn {
+    order: 2;
+    margin: 0 0 0 10px;
+    min-width: 74px;
+    height: 32px;
+    font-size: 15px;
+  }
+  .logo {
+    order: 1;
+    width: 88px;
+    height: auto;
+    margin-right: 0;
+  }
+  .mobile-nav-dropdown {
+    width: 78vw;
+    min-width: 120px;
+    right: 2vw;
+    top: 49px;
+  }
+}
+
+/* Dynamic Height/Width for Core Sections */
+.hero-section {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 60vh;
+  height: auto;
+  background-color: #f3f3db;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.frame,
+.frame-2,
+.frame-3,
+.frame-4,
+.frame-testimonials,
+.footer {
+  width: 100%;
+  max-width: 1240px;
+  min-height: min-content;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 4vw;
+  box-sizing: border-box;
+}
+
+.hero-right {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+.hero-left {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+.hero-images-container {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  aspect-ratio: 1.1 / 1; /* fallback for squareness */
+  margin-left: auto;
+  margin-right: 0;
+  z-index: 13;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-img-main, .hero-img-middle, .hero-img-small {
+  width: 26vw;
+  max-width: 100%;
+  height: auto;
+  min-width: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.waitlist-image,
+.about-img-square,
+.about-img-landscape,
+.about-img-tall {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+}
+
+.footer {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 182px;
+  height: auto;
+  background-color: #83efb7;
+  margin: 0 auto;
+}
+
+/* Responsive override to maintain dynamic */
+@media (max-width: 900px) {
+  .frame-2,
+  .frame-3,
+  .frame-4,
+  .frame-testimonials,
+  .footer {
+    max-width: 97vw;
+    padding: 0 2vw;
+  }
+  .hero-images-container {
+    max-width: 210px;
+  }
+}
+@media (max-width: 520px) {
+  .footer, .frame-2, .frame-3, .frame-4, .frame-testimonials {
+    max-width: 100vw;
+    padding: 0 1vw;
+  }
+  .hero-section {
+    min-height: 27vh;
+  }
+  .hero-images-container {
+    max-width: 122px;
+  }
+}
+
+/* Fix for text overflow in all main text classes */
+.hero-title, .hero-description, .hero-subtitle,
+.frame .p, .frame-2 .text-wrapper, .frame-2 .p, .frame-3 .text-wrapper, .frame-3 .p,
+.frame-testimonials .text-wrapper, .frame-testimonials .p, .footer-link, .footer-tagline, .waitlist-heading, .waitlist-caption, .waitlist-small, .waitlist-label {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal !important;
+}
+
+@media (max-width: 765px) {
+  .hero-title, .hero-description, .hero-subtitle,
+  .frame .p, .frame-2 .text-wrapper, .frame-2 .p, .frame-3 .text-wrapper, .frame-3 .p,
+  .frame-testimonials .text-wrapper, .frame-testimonials .p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: normal !important;
+    max-width: 100vw;
+  }
+}
+@media (max-width: 520px) {
+  .hero-title, .hero-description, .hero-subtitle,
+  .frame .p, .frame-2 .text-wrapper, .frame-2 .p, .frame-3 .text-wrapper, .frame-3 .p,
+  .frame-testimonials .text-wrapper, .frame-testimonials .p {
+    font-size: min(6vw, 19px);
+    text-align: center;
+    white-space: normal !important;
+    max-width: 98vw;
+  }
+}
+
+/* CLEANUP: Remove unneeded margins and fixed heights/widths for true fluid responsiveness */
+.hero-section, .frame, .frame-2, .frame-3, .frame-4, .frame-testimonials, .footer {
+  margin-left: unset !important;
+  margin-right: unset !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  min-width: 0;
+  height: auto !important;
+  min-height: 0 !important;
+}
+.hero-left, .hero-right, .hero-images-container {
+  margin-left: unset !important;
+  margin-right: unset !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  min-width: 0;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.hero-title, .hero-description, .hero-subtitle,
+.frame .p, .frame-2 .text-wrapper, .frame-2 .p, .frame-3 .text-wrapper, .frame-3 .p,
+.frame-testimonials .text-wrapper, .frame-testimonials .p {
+  margin-left: unset !important;
+  margin-right: unset !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+@media (max-width: 765px) {
+  .hero-title, .hero-description, .hero-subtitle,
+  .frame .p, .frame-2 .text-wrapper, .frame-2 .p, .frame-3 .text-wrapper, .frame-3 .p,
+  .frame-testimonials .text-wrapper, .frame-testimonials .p {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+  .hero-section, .frame, .frame-2, .frame-3, .frame-4, .frame-testimonials, .footer {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  .hero-left, .hero-right, .hero-images-container {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
 }
