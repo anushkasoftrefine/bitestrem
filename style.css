@@ -515,84 +515,94 @@
 }
 .frame-2 {
   display: flex;
+  /* flex-wrap: wrap; */
   width: 100%;
-  max-width: 1200px;
+  max-width: 1240px;
   align-items: center;
-  gap: 128px;
+  justify-content: space-between;
+  gap: 5rem;
   position: relative;
-  margin: 80px auto;
-  padding: 0 20px;
+  margin: 60px auto;
+  padding: 0 4vw;
+  box-sizing: border-box;
 }
-
-.frame-2 .mask-group {
-  position: relative;
-  width: 481px;
-  height: 455px;
-  border-radius: 20px;
-  object-fit: cover;
+/* Left images wrapper in frame-2 */
+.frame-2 .about-imgs {
+  flex: 1 1 360px;
+  min-width: 300px;
 }
-
+/* Right text wrapper in frame-2 */
 .frame-2 .div {
   display: flex;
   flex-direction: column;
-  /* width: 592px; */
-  align-items: flex-start;
+  flex: 1 1 360px;
+  max-width: 620px;
+  width: 100% !important; /* override old fixed width */
   gap: 25px;
-  position: relative;
-  margin-right: -1.00px;
 }
-
 .frame-2 .div-2 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 15px;
-  position: relative;
-  /* align-self: stretch; */
-  width: 100%;
-  flex: 0 0 auto;
+  width: 100% !important; /* override align-self:stretch/width overrides */
 }
-
+/* Typography scaling */
 .frame-2 .text-wrapper {
-  position: relative;
-  width: fit-content;
-  margin-top: -1.00px;
-  font-family: "Karla-Bold", Helvetica;
-  font-weight: 700;
-  color: #222222;
-  font-size: 36px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
+  font-size: clamp(24px, 3.2vw, 36px);
+  white-space: normal !important;
 }
-
-.frame-2 .p {
-  position: relative;
-  align-self: stretch;
-  font-family: "Karla-Regular", Helvetica;
-  font-weight: 400;
-  color: #3a3a3a;
-  font-size: 22px;
-  letter-spacing: 0;
-  line-height: 30px;
+.frame-2 .p,
+.frame-2 .text-wrapper-2 {
+  font-size: clamp(16px, 2.2vw, 22px);
+  line-height: 1.5;
+  white-space: normal !important;
 }
-
-.frame .div-3 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  flex: 0 0 auto;
-}
-
+/* Icon row */
 .frame-2 .div-4 {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 6px 10px;
-  position: relative;
-  align-self: stretch;
+  padding: 6px 0; /* remove extra side padding */
+}
+/* Any images used directly */
+.frame-2 .mask-group {
   width: 100%;
+  max-width: 481px;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  .frame-2 {
+    justify-content: center;
+    gap: clamp(16px, 4vw, 44px);
+    padding: 0 3vw;
+  }
+  .frame-2 .div {
+    align-items: start;
+    text-align: center;
+  }
+  .frame-2 .div-4 {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .frame-2 {
+    margin: 40px auto;
+    padding: 0 2vw;
+    gap: 1rem;
+  }
+  .frame-2 .div {
+    gap: 18px;
+  }
+}
+
+.frame-2 .div-3 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
   flex: 0 0 auto;
 }
 
@@ -634,7 +644,7 @@
   align-items: center;
   position: relative;
   margin: 80px auto;
-  padding: 0 20px;
+  gap: 5rem;
   justify-content: space-between;
 }
 
@@ -1696,6 +1706,7 @@
   cursor: pointer;
 }
 
+/* About images - balanced responsive layout */
 .about-imgs {
   display: flex;
   align-items: flex-start;
@@ -1705,42 +1716,51 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  min-width: 200px;
+  width: 250px;
+}
+.about-img-tall {
+  width: 350px;
+  min-width: 250px;
+  border-radius: 20px;
+  object-fit: cover;
 }
 .about-img-square {
   width: 100%;
-  max-width: 350px;
-  height: auto;
+  aspect-ratio: 1 / 1;
   border-radius: 20px;
   object-fit: cover;
 }
 .about-img-landscape {
   width: 100%;
-  max-width: 350px;
-  height: auto;
+  /* aspect-ratio: 16 / 9; */
   border-radius: 20px;
   object-fit: cover;
 }
-.about-img-tall {
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  border-radius: 20px;
-  object-fit: cover;
-}
+
+/* @media (max-width: 1024px) {
+  .about-img-left,
+  .about-img-tall {
+    width: clamp(120px, 32vw, 220px);
+  }
+} */
+
 @media (max-width: 700px) {
   .about-imgs {
     flex-direction: column;
-    gap: 1rem;
-    width: 100vw;
     align-items: center;
+  }
+  /* .about-img-left,
+  .about-img-tall {
+    width: min(92vw, 420px);
   }
   .about-img-square,
   .about-img-landscape,
   .about-img-tall {
-    width: 90vw;
-    max-width: 170px;
+    width: 100%;
     height: auto;
-  }
+    aspect-ratio: auto;
+  } */
 }
 
 /* ------ Responsive Design: 768px, 520px, 420px, 320px ------ */
@@ -1849,7 +1869,7 @@
 }
 
 @media (max-width: 520px) {
-  .hero-header, .hero-content, .frame-2, .frame-3, .frame-4, .frame-testimonials, .footer {
+  .hero-header, .hero-content,.hero-section, .frame-2, .frame-3, .frame-4, .frame-testimonials, .footer {
     padding-left: 7vw !important;
     padding-right: 7vw !important;
   }
@@ -2234,6 +2254,7 @@ body {
 /* Responsive override to maintain dynamic */
 @media (max-width: 900px) {
   .frame-2,
+  .hero-section,
   .frame-3,
   .frame-4,
   .frame-testimonials,
@@ -2283,7 +2304,7 @@ body {
   .hero-title, .hero-description, .hero-subtitle,
   .frame .p, .frame-2 .text-wrapper, .frame-2 .p, .frame-3 .text-wrapper, .frame-3 .p,
   .frame-testimonials .text-wrapper, .frame-testimonials .p {
-    font-size: min(6vw, 19px);
+    /* font-size: min(6vw, 19px); */
     text-align: center;
     white-space: normal !important;
     max-width: 98vw;
@@ -2346,4 +2367,197 @@ body {
     height: auto !important;
     min-height: 0 !important;
   }
+}
+
+/* Frame-2: restore font families and prevent overlap */
+.frame-2 .text-wrapper {
+  font-family: "Karla-Bold", Helvetica !important;
+  font-weight: 700;
+  color: #222222;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+.frame-2 .p {
+  font-family: "Karla-Regular", Helvetica !important;
+  font-weight: 400;
+  color: #3a3a3a;
+  font-size: 22px;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+.frame-2 .text-wrapper-2 {
+  font-family: "Karla-Regular", Helvetica !important;
+  font-weight: 400;
+  color: #3a3a3a;
+  font-size: 22px;
+  letter-spacing: 0;
+  line-height: 40px;
+  white-space: nowrap;
+}
+@media (max-width: 700px) {
+  /* safeguard: allow wrapping on small screens */
+  .frame-2 .text-wrapper,
+  .frame-2 .text-wrapper-2 { white-space: normal; }
+}
+
+/* Ensure .frame-2 columns never overlap */
+.frame-2 {
+  align-items: flex-start;
+}
+.frame-2 .about-imgs,
+.frame-2 .div {
+  flex: 1 1 48% !important;
+  max-width: 48% !important;
+  min-width: 320px;
+  z-index: auto !important;
+}
+@media (max-width: 980px) {
+  .frame-2 .about-imgs,
+  .frame-2 .div {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    min-width: 0;
+  }
+}
+
+/* Keep .frame-2 in a single row (two columns) until it stacks on small screens */
+@media (min-width: 981px) {
+  .frame-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap !important;
+  }
+  .frame-2 .about-imgs,
+  .frame-2 .div {
+    flex: 0 0 calc(50% - 2.5rem) !important; /* account for 5rem gap */
+    max-width: calc(50% - 2.5rem) !important;
+    min-width: 0 !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .frame-2 {
+    flex-wrap: wrap !important;
+  }
+  .frame-2 .about-imgs,
+  .frame-2 .div {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  .frame-3{
+    flex-wrap: wrap !important;
+  }
+  .frame-4,.frame-contact{
+    flex-wrap: wrap !important;
+    justify-content: center;
+  }
+}
+
+/* Frame-3: mirror responsive behavior of Frame-2 */
+@media (min-width: 981px) {
+  .frame-3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap !important;
+    justify-content: space-between;
+  }
+  .frame-3 .div,
+  .frame-3 .div-6 {
+    flex: 0 0 calc(50% - 2.5rem) !important; /* match 5rem gap behavior */
+    max-width: calc(50% - 2.5rem) !important;
+    min-width: 0 !important;
+  }
+}
+@media (max-width: 980px) {
+  .frame-3 {
+    display: flex;
+    flex-wrap: wrap !important;
+    gap: 1rem;
+    justify-content: center;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  .frame-3 .div,
+  .frame-3 .div-2,
+  .frame-3 .div-3,
+  .frame-3 .div-6 {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .frame-3 .div {
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+  }
+  .frame-3 .text-wrapper,
+  .frame-3 .p,
+  .frame-3 .text-wrapper-3,
+  .frame-3 .text-wrapper-2 {
+    white-space: normal !important;
+  }
+  .frame-3 .element {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    border-radius: 16px;
+  }
+  .point-row { justify-content: center; }
+}
+
+/* Fix: prevent .frame-4 overlapping .frame-3 image in responsive */
+@media (max-width: 980px) {
+  .frame-3 .div-6 {
+    position: relative !important;
+    height: auto !important;
+  }
+  .frame-3 .element {
+    position: relative !important; /* was absolute; remove from overlay flow on mobile */
+    width: 100% !important;
+    height: auto !important;
+    left: auto !important;
+    top: auto !important;
+  }
+  .frame-3 {
+    margin-bottom: 24px; /* breathing room below the image */
+  }
+  .frame-4 {
+    margin-top: 24px; /* ensure separation from previous section */
+  }
+}
+
+/* Text-only mode for very small screens */
+@media (max-width: 480px) {
+  /* Frame-2: hide image column */
+  .frame-2 .about-imgs,
+  .frame-2 .about-img-square,
+  .frame-2 .about-img-landscape,
+  .frame-2 .about-img-tall,
+  .frame-2 .mask-group { display: none !important; }
+  .frame-2 .div { flex: 1 1 100% !important; max-width: 100% !important; }
+
+  /* Frame-3: hide image column */
+  .frame-3 .div-6,
+  .frame-3 .element { display: none !important; }
+  .frame-3 .div { flex: 1 1 100% !important; max-width: 100% !important; text-align: center; align-items: center; }
+
+  /* Hide hero images */
+  .hero-right,
+  .hero-images-container,
+  .hero-img-small,
+  .hero-img-middle,
+  .hero-img-main { display: none !important; }
+  .hero-left { width: 100% !important; max-width: 100% !important; }
+
+  /* Hide Contact Us (waitlist) image */
+  .frame-5 .waitlist-image,
+  .waitlist-image { display: none !important; }
+  .frame-5 .waitlist-content { max-width: 100% !important; width: 100% !important; }
+
+  /* Hide Powered by Brands left image */
+  .frame-4 .s4-left .img { display: none !important; }
+  .frame-4 .s4-right { width: 100% !important; max-width: 100% !important; }
 }
