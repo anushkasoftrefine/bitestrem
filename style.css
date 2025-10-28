@@ -1617,7 +1617,6 @@
 
 .footer-logo {
   width: 193px;
-  height: 108px;
 }
 
 .footer-tagline {
@@ -2583,6 +2582,19 @@ body {
   .s4-right .text-wrapper,
   .frame-testimonials .text-wrapper,
   .waitlist-heading { font-size: 18px !important; line-height: 1.3 !important; }
+
+  /* Footer mobile font sizes */
+  .footer .contact-heading,
+  .footer .tagline-bold {
+    font-size: 18px !important;
+  }
+  .footer .tagline-normal,
+  .footer .footer-link,
+  .footer .contact-item span,
+  .footer .social-icon {
+    font-size: 13px !important;
+  }
+  
 
   /* Specific tweak: waitlist heading slightly smaller on very small screens */
   .waitlist-label { font-size: 15px !important; }
