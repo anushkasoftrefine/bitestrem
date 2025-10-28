@@ -1998,16 +1998,38 @@
   .hero-description, .hero-subtitle {
     font-size: 11px !important;
   }
-  .btn-primary, .btn-link {
+  .btn-primary, .btn-link  {
     font-size: 10px;
     padding: 4px 9px;
   }
+
+  .waitlist-button{
+    height: 30px;
+    padding: 0 1.3rem;
+    font-size: 1rem;
+    color: #222;
+    margin-bottom: 0.06rem;
+    font-family: "Karla-Regular", Helvetica;
+    font-weight: 500;
+
+  }
+
+
+  .waitlist-input{
+    height: 30px;
+  }
+
+  .footer-logo {
+    width: 193px;
+    height: 56px;
+}
+  
   /* Ensure all buttons use the same ultra-compact sizing at <=420px */
   .login-btn,
   .frame-3 .div-5,
   .s4-right .div-3,
-  .frame-5 .div-wrapper-3,
-  .waitlist-button {
+  .frame-5 .div-wrapper-3
+   {
     font-size: 10px;
     padding: 4px 9px;
     height: auto;
@@ -2071,17 +2093,17 @@
     padding: 4px 0 !important;
   }
   .hero-title {
-    font-size: 8.2px;
+    font-size: 18px;
     line-height: 1.12;
   }
   .hero-description, .hero-subtitle {
-    font-size: 7px !important;
+    font-size: 13px !important;
   }
-  .btn-primary, .btn-link {
+  /* .btn-primary, .btn-link {
     font-size: 6px;
     padding: 1.3px 5px;
     height: auto;
-  }
+  } */
   .hero-images-container {
     max-width: 38px;
     height: 12px;
@@ -2111,8 +2133,8 @@
   }
   
   .footer .footer-logo {
-    width: 150px;
-    height: 80px;
+    width: 128px;
+    height: 50px;
   }
   .footer-link, .contact-heading, .contact-item span {
     font-size: 16px;
@@ -2638,4 +2660,9 @@ body {
   .hero-header{
     justify-content: center;
   }
+}
+
+
+.div-3 ,.div-5{
+  border: none;
 }
