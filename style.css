@@ -209,12 +209,12 @@
 .hero-img-middle {
   position: absolute;
   aspect-ratio: 1/1;
-  width: 10vw;
+  width: 200px;
   height: auto;
   border-radius: 50%;
   object-fit: cover;
-  top: 10%;
-  right: 10%;
+  top: -3%;
+  right: 0%;
   box-shadow: 0 8px 24px rgba(0,0,0,0.2);
   z-index: 4;
 }
@@ -358,8 +358,8 @@
   height: auto;
   border-radius: 50%;
   object-fit: cover;
-  left: 61%;
-  top: 42%;
+  left: 10%;
+  top: 25%;
   aspect-ratio: 1/1;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
 }
@@ -367,12 +367,12 @@
 .hero-img-small {
   position: absolute;
   aspect-ratio: 1/1;
-  width: 5vw;
+  width: 100px;
   height: auto;
   border-radius: 50%;
   object-fit: cover;
-  bottom: 20%;
-  left: 10%;
+  top: -10%;
+  left: 45%;
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   z-index: 5;
 }
