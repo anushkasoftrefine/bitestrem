@@ -2826,56 +2826,29 @@ body {
   border-radius: 50%;
   background: conic-gradient(
     from 270deg,
-    #FFCC15 0deg 80deg,
-    #f3f3db 80deg 90deg,
-    #FFA457 90deg 170deg,
-    #f3f3db 170deg 180deg,
-    #ED6326 180deg 260deg,
-    #f3f3db 260deg 270deg,
-    #B7C20F 270deg 350deg,
-    #f3f3db 350deg 360deg
+    #FFCC15 0deg 80deg,         /* yellow arc */
+    #f3f3db 80deg 90deg,        /* gap */
+    #FFA457 90deg 170deg,       /* orange arc */
+    #f3f3db 170deg 180deg,      /* gap */
+    #ED6326 180deg 260deg,      /* red arc */
+    #f3f3db 260deg 270deg,      /* gap */
+    #B7C20F 270deg 350deg,      /* green arc */
+    #f3f3db 350deg 360deg       /* final gap */
   );
-  -webkit-mask: radial-gradient(circle, transparent 48%, #000 50%);
-  mask: radial-gradient(circle, transparent 48%, #000 50%);
+  -webkit-mask: radial-gradient(circle, transparent calc(50% - 8px), #000 calc(50% - 8px));
+  /* mask: radial-gradient(circle, transparent calc(50% - 8px), #000 calc(50% - 8px)); */
   pointer-events: none;
   z-index: 2;
 }
 
 @media (max-width: 1151px) {
+  /* .hero-img-main is 384px, left:-6%, top:25% */
   .hero-images-container::before {
-    width: 424px;
-    height: 424px;
-    left: calc(-6% - 20px);
-    top: calc(25% - 20px);
-    -webkit-mask: radial-gradient(circle, transparent 48%, #000 50%);
-    mask: radial-gradient(circle, transparent 48%, #000 50%);
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-images-container::before {
-    width: 301px;
-    height: 301px;
-    left: calc(31% - 20px);
-    top: calc(34% - 20px);
-    -webkit-mask: radial-gradient(circle, transparent 48%, #000 50%);
-    mask: radial-gradient(circle, transparent 48%, #000 50%);
-  }
-}
-
-@media (max-width: 520px) {
-  .hero-images-container::before {
-    width: 271px;
-    height: 271px;
-    left: calc(28% - 20px);
-    top: calc(39% - 20px);
-    -webkit-mask: radial-gradient(circle, transparent 48%, #000 50%);
-    mask: radial-gradient(circle, transparent 48%, #000 50%);
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-images-container::before {
-    content: none;
+    width: 402px;  /* 384 + 40 */
+    height: 402px;
+    left: calc(-6% - 9px);
+    top: calc(25% - 10px);
+    -webkit-mask: radial-gradient(circle, transparent calc(50% - 6.5px), #000 calc(50% - 6.5px));
+    mask: radial-gradient(circle, transparent calc(50% - 6.5px), #000 calc(50% - 6.5px));
   }
 }
