@@ -7,6 +7,8 @@
   margin: 0 auto;
 }
 
+
+/* background images */
 .hero-pizza-img {
   position: absolute;
   top: 135%;
@@ -18,7 +20,6 @@
   box-shadow: 0 4px 18px rgba(0,0,0,0.10);
   z-index: 20;
 }
-  /* Decorative fork image in hero section */
   .hero-fork-img {
     position: absolute;
     bottom: 0%;
@@ -30,10 +31,9 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     z-index: 2;
   }
-  /* Decorative carrot image in hero section */
+
   .hero-carrot-img {
     position: absolute;
-    /* bottom: 0%; */
     top: -29%;
     right: 47%;
     width: 115px;
@@ -46,7 +46,6 @@
 
   .hero-tacos-img{
     position: absolute;
-    /* bottom: 0%; */
     bottom: -17%;
     left: -2%;
     width: 115px;
@@ -65,7 +64,6 @@
 
   .frame3-pizza-img{
      position: absolute;
-    /* bottom: 0%; */
     bottom: -19%;
     left: -11%;
     width: 115px;
@@ -91,22 +89,18 @@
   }
 
   @media (max-width: 768px) {
-    .hero-fork-img,
-    .hero-carrot-img {
-      width: 40px;
-      height: 40px;
-      top: 12px;
-      left: 12px;
-      bottom: 12px;
-      right: 12px;
+   
+    .hero-pizza-img ,.hero-fork-img,.hero-carrot-img,.hero-tacos-img,.frame3-pizza-img,.frame4-fork-img{
+      width: 80px;
+      height: 80px;
     }
   }
-@media (max-width: 768px) {
-  .hero-pizza-img {
-    width: 54px;
-    height: 54px;
+  @media (max-width: 520px) {
+    .hero-pizza-img ,.hero-fork-img,.hero-carrot-img,.hero-tacos-img,.frame3-pizza-img,.frame4-fork-img{
+        width: 40px;
+        height: 40px;
+      }
   }
-}
 
 
 .ellipse-background {
