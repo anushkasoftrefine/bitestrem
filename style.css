@@ -2738,7 +2738,7 @@ body {
 }
 
 /* Text-only mode for very small screens */
-@media (max-width: 480px) {
+@media (max-width: 800px) {
   /* Frame-2: hide image column */
   .frame-2 .about-imgs,
   .frame-2 .about-img-square,
